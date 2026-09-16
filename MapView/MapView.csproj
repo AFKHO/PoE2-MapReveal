@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyName>MapView</AssemblyName>
+    <RootNamespace>Poe2Map</RootNamespace>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SÃ¼reÃ§ bulma, bellek okuma ve zemin bulma kodu MapScan ile ortak; kopyalamak yerine baÄŸlÄ±yoruz. -->
+    <Compile Include="..\MapScan\Native.cs" Link="Native.cs" />
+    <Compile Include="..\MapScan\PlayerChain.cs" Link="PlayerChain.cs" />
+    <Compile Include="..\MapScan\TerrainFinder.cs" Link="TerrainFinder.cs" />
+    <Compile Include="..\MapScan\LiveArea.cs" Link="LiveArea.cs" />
+    <Compile Include="..\MapScan\PlayerFinder.cs" Link="PlayerFinder.cs" />
+    <Compile Include="..\MapScan\LivePosition.cs" Link="LivePosition.cs" />
+    <Compile Include="..\MapScan\Pin.cs" Link="Pin.cs" />
+    <Compile Include="..\MapScan\CamHunt.cs" Link="CamHunt.cs" />
+    <Compile Include="..\MapScan\UiFinder.cs" Link="UiFinder.cs" />
+    <Compile Include="..\MapScan\EntityReader.cs" Link="EntityReader.cs" />
+    <Compile Include="..\MapScan\LocalPlayer.cs" Link="LocalPlayer.cs" />
+    <Compile Include="..\MapScan\ExitFinder.cs" Link="ExitFinder.cs" />
+    <Compile Include="..\MapScan\FlowField.cs" Link="FlowField.cs" />
+    <Compile Include="..\MapScan\TileReader.cs" Link="TileReader.cs" />
+    <Compile Include="..\MapScan\TileExits.cs" Link="TileExits.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Istege bagli cikis-etiketi verisi; depoda yok (bkz. data/README.md). -->
+    <None Include="..\data\important_tgt_files.txt" Link="important_tgt_files.txt"
+          Condition="Exists('..\data\important_tgt_files.txt')"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

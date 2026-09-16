@@ -1,0 +1,6 @@
+# Normalize line endings; keep C#/project files as text.
+* text=auto eol=crlf
+*.cs text
+*.csproj text
+*.md text
+*.sln text

@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Ayarsiz harita: calistirinca harita oyunda belirir. Pencere yok, ayar yok.
+    Butun kod MapView ve MapScan ile ortak; burada sadece onlari birbirine baglayan
+    kucuk bir denetleyici var. MapView gelistirme ve ayar araci olarak kaliyor.
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyName>MapOverlay</AssemblyName>
+    <RootNamespace>Poe2Map</RootNamespace>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\MapScan\Native.cs" Link="Shared\Native.cs" />
+    <Compile Include="..\MapScan\PlayerChain.cs" Link="Shared\PlayerChain.cs" />
+    <Compile Include="..\MapScan\TerrainFinder.cs" Link="Shared\TerrainFinder.cs" />
+    <Compile Include="..\MapScan\LiveArea.cs" Link="Shared\LiveArea.cs" />
+    <Compile Include="..\MapScan\PlayerFinder.cs" Link="Shared\PlayerFinder.cs" />
+    <Compile Include="..\MapScan\LivePosition.cs" Link="Shared\LivePosition.cs" />
+    <Compile Include="..\MapScan\Pin.cs" Link="Shared\Pin.cs" />
+    <Compile Include="..\MapScan\CamHunt.cs" Link="Shared\CamHunt.cs" />
+    <Compile Include="..\MapScan\UiFinder.cs" Link="Shared\UiFinder.cs" />
+    <Compile Include="..\MapView\OverlayForm.cs" Link="Shared\OverlayForm.cs" />
+    <Compile Include="..\MapView\OverlayForm.Monsters.cs" Link="Shared\OverlayForm.Monsters.cs" />
+    <Compile Include="..\MapView\OverlayForm.Paths.cs" Link="Shared\OverlayForm.Paths.cs" />
+    <Compile Include="..\MapScan\ExitFinder.cs" Link="Shared\ExitFinder.cs" />
+    <Compile Include="..\MapScan\FlowField.cs" Link="Shared\FlowField.cs" />
+    <Compile Include="..\MapScan\TileReader.cs" Link="Shared\TileReader.cs" />
+    <Compile Include="..\MapScan\TileExits.cs" Link="Shared\TileExits.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Istege bagli cikis-etiketi verisi; depoda yok (bkz. data/README.md). -->
+    <None Include="..\data\important_tgt_files.txt" Link="important_tgt_files.txt"
+          Condition="Exists('..\data\important_tgt_files.txt')"
+          CopyToOutputDirectory="PreserveNewest" />
+    <Compile Include="..\MapScan\EntityReader.cs" Link="Shared\EntityReader.cs" />
+    <Compile Include="..\MapScan\LocalPlayer.cs" Link="Shared\LocalPlayer.cs" />
+    <Compile Include="..\MapView\Player.cs" Link="Shared\Player.cs" />
+    <Compile Include="..\MapView\CrashLog.cs" Link="Shared\CrashLog.cs" />
+  </ItemGroup>
+
+</Project>

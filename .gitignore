@@ -1,0 +1,23 @@
+# .NET build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Debug / exploration artifacts (memory dumps, snapshots, logs) - not for the repo
+dumps/
+snapshots/
+*.rar
+*.log
+*.bin
+*.scan
+*.tsv
+son_kalibrasyon.txt
+
+# Optional third-party data (see data/README.md) - not redistributed here
+data/important_tgt_files.txt
+
+# OS
+Thumbs.db
+Desktop.ini
